@@ -73,7 +73,7 @@ data "aws_ami" "packer" {
   most_recent = true
   filter {
     name   = "name"
-    values = [var.ami_id]
+    values = [var.ami]
   }
   owners = ["self"]
 }
