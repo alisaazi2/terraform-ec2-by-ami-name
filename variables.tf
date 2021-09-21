@@ -70,7 +70,6 @@ data "aws_subnet_ids" "my-subnets" {
 }
 
 data "aws_ami_ids" "packer" {
-  most_recent = true
   filter {
     name   = "name"
     values = [var.ami]
