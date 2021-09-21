@@ -15,7 +15,7 @@ variable "public_key" {
   type    = string
 }
 
-variable "ami_name" {
+variable "ami_id" {
   type    = string
 }
 
@@ -73,7 +73,7 @@ data "aws_ami" "packer" {
   most_recent = true
   filter {
     name   = "name"
-    values = [var.ami_name]
+    values = [var.ami_id]
   }
   owners = ["self"]
 }
