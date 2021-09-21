@@ -10,7 +10,7 @@ resource "aws_key_pair" "my-key" {
 resource "aws_instance" "web" {
   key_name = aws_key_pair.my-key.key_name
   instance_type = var.instance_type
-  ami           = data.aws_ami_ids.packer.value
+  ami           = var.ami
   security_groups = [aws_security_group.web.id]
 
   subnet_id     = tolist(data.aws_subnet_ids.my-subnets.ids)[0]
