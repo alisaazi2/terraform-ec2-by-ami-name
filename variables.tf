@@ -72,7 +72,8 @@ data "aws_subnet_ids" "my-subnets" {
 data "aws_ami" "packer" {
   most_recent = true
   filter {
-    id = [var.ami]
+    name   = "name"
+    values = [var.ami]
   }
   owners = ["self"]
 }
